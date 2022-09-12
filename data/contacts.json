@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Adam",
+        "lastName": "P",
+        "phoneNum": "7833284091",
+        "email": "filler1@gmail.com",
+        "favorite": true
+    },
+    {
+        "name": "Adam",
+        "lastName": "F",
+        "phoneNum": "7833488803",
+        "email": "filler2@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "Ashley",
+        "lastName": "F",
+        "phoneNum": "5143085687",
+        "favorite": false
+    },
+    {
+        "name": "Derrick",
+        "lastName": "C",
+        "phoneNum": "7833284059",
+        "email": "filler3@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "David",
+        "lastName": "S",
+        "phoneNum": "5143094321",
+        "email": "filler4@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "Amanda",
+        "lastName": "C",
+        "phoneNum": "7833284156",
+        "email": "filler52@gmail.com",
+        "favorite": true
+    },
+    {
+        "name": "Mom",
+        "phoneNum": "5143284003",
+        "email": "filler6@gmail.com",
+        "favorite": true
+    },
+    {
+        "name": "Peter",
+        "lastName": "D",
+        "phoneNum": "7834406001",
+        "favorite": false
+    },
+    {
+        "name": "John",
+        "lastName": "B",
+        "phoneNum": "5143288751",
+        "email": "filler2364@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "Adam",
+        "lastName": "P",
+        "phoneNum": "5143354081",
+        "email": "filler1@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "Work",
+        "phoneNum": "2462267774",
+        "email": "filler13252@gmail.com",
+        "favorite": true
+    },
+    {
+        "name": "Michael",
+        "lastName": "P",
+        "phoneNum": "5143210421",
+        "favorite": false
+    },
+    {
+        "name": "Dad",
+        "phoneNum": "7833284037",
+        "favorite": true
+    },
+    {
+        "name": "Ronald",
+        "lastName": "R",
+        "email": "filler758@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "Mike",
+        "lastName": "D",
+        "phoneNum": "5142155201",
+        "favorite": true
+    }
+]
