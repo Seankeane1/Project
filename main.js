@@ -6,7 +6,14 @@ const DOMSelectors = {
 
 // need to access JSON data
 
+const searchStates = async searchText => {
+    const res = await fetch('../data/contacts.json');
+    const cont = await res.json();
 
+    console.log(cont)
+}
+
+searchStates();
 
 // need a function to display everything
 

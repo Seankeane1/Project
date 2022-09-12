@@ -1,0 +1,12 @@
+body {
+  display: grid;
+  justify-content: center;
+}
+
+header {
+  font-size: 5vh;
+}
+
+.contact-info {
+  padding-top: 5vh;
+}/*# sourceMappingURL=style.css.map */
