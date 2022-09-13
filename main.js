@@ -1,16 +1,19 @@
 const DOMSelectors = {
-    searchBar: document.getElementsByClassName(".search-bar"),
-    favBtn: document.getElementsByClassName(".favorite-btn"),
-    container: document.getElementsByClassName(".container")
+    searchBar: document.querySelector(".search-bar"),
+    favBtn: document.querySelector(".favorite-btn"),
+    container: document.querySelectorAll(".container")
 };
 
 // need to access JSON data
 
 const searchStates = async searchText => {
-    const res = await fetch('../data/contacts.json');
-    const cont = await res.json();
+    const response = await fetch('../data/contacts.json');
+    const contacts = await response.json();
 
-    console.log(cont)
+
+    //console.log(Array.isArray(contacts));
+
+
 }
 
 searchStates();
@@ -25,4 +28,6 @@ searchStates();
 
 // need a function to distinguish favorites
 
-
+DOMSelectors.favBtn.addEventListener('click', () => {
+    console.log('wack');
+});
