@@ -9,11 +9,13 @@ let contacts = [];
 DOMSelectors.searchBar.addEventListener('input', function(e){
 
 const searchValue = e.target.value.toLowerCase(); // lowercase makes it easier to fiter without being specific
-const filteredResult = contacts.filter(() => {
-
+const filteredResults = contacts.filter((contact) => {
+    contact.name.toLowerCase().includes(searchValue) ||
+    contact.email.toLowerCase().includes(searchValue) ||
+    contact.phoneNum().includes(searchValue)
 }); // filter output
-
-})
+displayContacts(filteredResults);
+});
 
 // need to access JSON data
 
@@ -21,13 +23,13 @@ const searchContacts = async searchText => {
     const response = await fetch('../data/contacts.json');
     contacts = await response.json();
 
-    console.log(Array.isArray(contacts));
-    console.log(contacts[0].name)
+    //console.log(Array.isArray(contacts));
+    //console.log(contacts[0].name)
 
     // need a function to display everything
 
 const displayContacts = (people) => {
-
+    const outputHtml = people
 }
 
 /* let content = DOMSelectors.container.innerHTML = `<div class="contact-info">
@@ -56,5 +58,7 @@ DOMSelectors.favBtn.addEventListener('click', () => {
 });
 
 // POSSIBLE* Toggle favorite function
+
+
 
 // POSSIBLE* Alphabetize contacts
