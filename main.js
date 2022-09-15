@@ -9,7 +9,10 @@ let contacts = [];
 DOMSelectors.searchBar.addEventListener('input', function(e){
 
 const searchValue = e.target.value.toLowerCase(); // lowercase makes it easier to fiter without being specific
-const filteredResult = contacts // filter output
+const filteredResult = contacts.filter(() => {
+
+}); // filter output
+
 })
 
 // need to access JSON data
