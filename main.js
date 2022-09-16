@@ -24,23 +24,47 @@ const searchContacts = async searchText => {
     contacts = await response.json();
 
     console.log(Array.isArray(contacts));
-    //console.log(contacts[0].name)
-};
+    console.log(contacts[0].name);
+
+    if(searchText.length === 0) {
+        matches = [];
+    };
+
+   for (let i = 0; i < contacts.length, i++;) {
+    let displayContacts = `<div class="contact-info">
+                <h1 id="name">${contacts[i].name}</h1>
+                <h2 id="last-name">${contacts[i].name}</h2>
+                <div class="favorite"></div>
+                <div class="info">
+                    <h3 class="phone-num">7949748765</h3>
+                    <h3 class="email">filler1@gmail</h3>
+                </div>`;
+    
+DOMSelectors.container.innerHTML += displayContacts
+   };
+   
+        
+    };
+
 
 // need a function to display everything
-const displayContacts = (contacts) => {
-    const outputHtml = contacts.map((contact) => {
-        return `<div class="contact-info">
-        <h1 id="name">${contact.name}</h1>
-        <h2 id="last-name">${contact[0].name}</h2>
-        <div class="favorite"></div>
-        <div class="info">
-            <h3 class="phone-num">7949748765</h3>
-            <h3 class="email">filler1@gmail</h3>
-        </div>`;
-    }).join('');
-DOMSelectors.container.innerHTML = outputHtml;
-}
+
+/*  if (searchText.length === 0) {
+        const displayContacts = (contacts) => {
+            const outputHtml = contacts.map((contact) => {
+                return `<div class="contact-info">
+                <h1 id="name">${contact.name}</h1>
+                <h2 id="last-name">${contact[0].name}</h2>
+                <div class="favorite"></div>
+                <div class="info">
+                    <h3 class="phone-num">7949748765</h3>
+                    <h3 class="email">filler1@gmail</h3>
+                </div>`;
+            }).join('');
+        DOMSelectors.container.innerHTML = outputHtml;
+        }
+        
+    };  */
 
 
 searchContacts();
@@ -49,7 +73,7 @@ searchContacts();
 // need a function to distinguish favorites
 
 DOMSelectors.favBtn.addEventListener('click', () => {
-    console.log('wack');
+    console.log('linked');
 });
 
 searchText();
