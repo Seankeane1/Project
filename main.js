@@ -24,13 +24,23 @@ displayContacts(filteredResults);
 const loadContacts = async () => {
     const response = await fetch('../data/contacts.json');
     contacts = await response.json();
-    displayContacts(contacts)
+    //displayContacts(contacts)
+
+// alphabetize names
+
+const alphabetize = (prop) =>
+  (a, b) => a[prop].toLowerCase() == b[prop].toLowerCase() ? 0 : a[prop].toLowerCase() < b[prop].toLowerCase() ? -1 : 1
+
+contacts.sort(alphabetize(`name`));
+
+displayContacts(contacts);
+
 
     //console.log(Array.isArray(contacts));
     //console.log(contacts[1].name);
     };
 
-    const displayContacts = () => contacts.forEach(contact => {
+     const displayContacts = () => contacts.forEach(contact => {
         let outputHtml = `<div class="contact-info">
                     <h1 id="name">${contact.name}</h1>
                     <h2 id="last-name">${contact.lastName}</h2>
@@ -41,8 +51,10 @@ const loadContacts = async () => {
                     </div>`;
         
     DOMSelectors.container.innerHTML += outputHtml
-       });
+       }); 
 
+       displayContacts(contacts);
+ 
 
 // need a function to display everything
 
