@@ -1,7 +1,7 @@
 const DOMSelectors = {
     searchBar: document.querySelector(".search-bar"),
     favBtn: document.querySelector(".favorite-btn"),
-    container: document.querySelectorAll(".container")
+    container: document.querySelector(".container")
 };
 
 let contacts = [];
@@ -11,45 +11,42 @@ DOMSelectors.searchBar.addEventListener('keyup', function(e){
 
 const searchValue = e.target.value.toLowerCase(); // lowercase makes it easier to filter without being specific
 const filteredResults = contacts.filter((contact) => {
-    contact.name.toLowerCase().includes(searchValue) ||
-    contact.email.toLowerCase().includes(searchValue)
+    return (
+    contact.name.toLowerCase().includes(searchValue) //||
+    //contact.email.toLowerCase().includes(searchValue)
+    );
 }); 
 displayContacts(filteredResults);
 });
 
 // need to access JSON data
 
-const searchContacts = async searchText => {
+const loadContacts = async () => {
     const response = await fetch('../data/contacts.json');
     contacts = await response.json();
+    displayContacts(contacts)
 
-    console.log(Array.isArray(contacts));
-    console.log(contacts[0].name);
-
-    if(searchText.length === 0) {
-        matches = [];
+    //console.log(Array.isArray(contacts));
+    //console.log(contacts[1].name);
     };
 
-   for (let i = 0; i < contacts.length, i++;) {
-    let displayContacts = `<div class="contact-info">
-                <h1 id="name">${contacts[i].name}</h1>
-                <h2 id="last-name">${contacts[i].name}</h2>
-                <div class="favorite"></div>
-                <div class="info">
-                    <h3 class="phone-num">7949748765</h3>
-                    <h3 class="email">filler1@gmail</h3>
-                </div>`;
-    
-DOMSelectors.container.innerHTML += displayContacts
-   };
-   
+    const displayContacts = () => contacts.forEach(contact => {
+        let outputHtml = `<div class="contact-info">
+                    <h1 id="name">${contact.name}</h1>
+                    <h2 id="last-name">${contact.lastName}</h2>
+                    <div class="favorite"></div>
+                    <div class="info">
+                        <h3 class="phone-num">${contact.phoneNum}</h3>
+                        <h3 class="email">${contact.email}</h3>
+                    </div>`;
         
-    };
+    DOMSelectors.container.innerHTML += outputHtml
+       });
 
 
 // need a function to display everything
 
-/*  if (searchText.length === 0) {
+ /* if (searchValue.length === 0) {
         const displayContacts = (contacts) => {
             const outputHtml = contacts.map((contact) => {
                 return `<div class="contact-info">
@@ -67,7 +64,7 @@ DOMSelectors.container.innerHTML += displayContacts
     };  */
 
 
-searchContacts();
+loadContacts();
 
 
 // need a function to distinguish favorites
@@ -75,8 +72,6 @@ searchContacts();
 DOMSelectors.favBtn.addEventListener('click', () => {
     console.log('linked');
 });
-
-searchText();
 
 // POSSIBLE* Toggle favorite function
 
