@@ -18,7 +18,7 @@ const searchInput = function(e){
     //contact.email.toLowerCase().includes(searchValue)
     );
 }); 
-displayContacts(filteredResults);
+console(filteredResults);
 };
 
 // need to access JSON data
