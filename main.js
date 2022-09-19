@@ -13,13 +13,11 @@ const searchInput = function(e){
 
     const searchValue = e.target.value.toLowerCase(); // lowercase makes it easier to filter without being specific
     const filteredResults = contacts.filter((contact) => {
-    return (
-    contact.name.toLowerCase().includes(searchValue) //||
-    //contact.email.toLowerCase().includes(searchValue)
-    );
-}); 
-console(filteredResults);
-};
+        const regex = new RegExp(`^${searchValue}`, 'gi');
+        return contact.name.match(regex);
+    });
+    console.log(filteredResults);
+}; 
 
 // need to access JSON data
 
@@ -40,7 +38,9 @@ displayContacts(contacts);
 
 //display each contact prior to search
     
-    const displayContacts = () => contacts.forEach(contact => {
+    const displayContacts = () => 
+    // add if else for the display
+    contacts.forEach(contact => {
         let outputHtml = `<div class="contact-info">
                     <h1 id="name">${contact.name}</h1>
                     <h2 id="last-name">${contact.lastName}</h2>
