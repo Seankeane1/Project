@@ -14,9 +14,24 @@ const searchInput = function(e){
     const searchValue = e.target.value.toLowerCase(); // lowercase makes it easier to filter without being specific
     const filteredResults = contacts.filter((contact) => {
         const regex = new RegExp(`^${searchValue}`, 'gi');
-        return contact.name.match(regex);
+        return contact.name.match(regex);      
+
+// can add phone number with ||      
+
     });
-    console.log(filteredResults);
+
+if (searchInput.length === 0){
+displayContacts(contacts);
+}
+else if(searchInput.length > 0){
+displayContacts(filteredResults);
+}
+else{
+DOMSelectors.container.innerHTML = "none"
+}
+
+console.log(filteredResults);
+
 }; 
 
 // need to access JSON data
@@ -28,13 +43,15 @@ const loadContacts = async () => {
 
 // alphabetize names
 
-const alphabetize = (prop) =>
+ const alphabetize = (prop) =>
   (a, b) => a[prop].toLowerCase() == b[prop].toLowerCase() ? 0 : a[prop].toLowerCase() < b[prop].toLowerCase() ? -1 : 1
 
 contacts.sort(alphabetize(`name`));
 
-displayContacts(contacts);
-    };
+displayContacts(contacts); 
+
+
+};
 
 //display each contact prior to search
     
@@ -53,14 +70,14 @@ displayContacts(contacts);
     DOMSelectors.container.innerHTML += outputHtml
        }); 
 
-       displayContacts(contacts);
+       //displayContacts(contacts);
  
        DOMSelectors.searchBar.addEventListener('keyup', searchInput)
 
 //if (searchValue.length === 0) 
 
 
-loadContacts(displayContacts());
+loadContacts(displayContacts(contacts));
 
 
 // need a function to distinguish favorites
