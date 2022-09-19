@@ -7,39 +7,42 @@ const DOMSelectors = {
 let contacts = [];
 
 // need a function to display certain results based on search data
-//DOMSelectors.searchBar.addEventListener('keyup', searchInput)
 
-const searchInput = function(e){
+ const searchInput = function(e){
 
-    const searchValue = e.target.value.toLowerCase(); // lowercase makes it easier to filter without being specific
+    const searchValue = e.target.value.toLowerCase();
     const filteredResults = contacts.filter((contact) => {
         const regex = new RegExp(`^${searchValue}`, 'gi');
-        return contact.name.match(regex);      
-
-// can add phone number with ||      
-
+        return contact.name.match(regex); 
     });
 
-if (searchInput.length === 0){
-displayContacts(contacts);
-}
-else if(searchInput.length > 0){
-displayContacts(filteredResults);
+if(searchValue === 0){
+DOMSelectors.container.innerHTML = ''
 }
 else{
-DOMSelectors.container.innerHTML = "none"
-}
+    filteredResults.forEach(contact => {
+        let Html = `<div class="contact-info">
+                    <h1 id="name">${contact.name}</h1>
+                    <h2 id="last-name">${contact.lastName}</h2>
+                    <div class="favorite"></div>
+                    <div class="info">
+                        <h3 class="phone-num">${contact.phoneNum}</h3>
+                        <h3 class="email">${contact.email}</h3>
+                    </div>`;
+        
+    DOMSelectors.container.innerHTML += Html
+       }); 
+    };
 
 console.log(filteredResults);
-
-}; 
+};  
+ 
 
 // need to access JSON data
 
 const loadContacts = async () => {
     const response = await fetch('../data/contacts.json');
     contacts = await response.json();
-    //displayContacts(contacts)
 
 // alphabetize names
 
@@ -48,15 +51,17 @@ const loadContacts = async () => {
 
 contacts.sort(alphabetize(`name`));
 
-displayContacts(contacts); 
 
+ /* if (searchInput.length === 0){
+filteredResults = [];
+DOMSelectors.container.innerHTML = ; 
+}  */
+
+displayContacts(); 
 
 };
 
-//display each contact prior to search
-    
-    const displayContacts = () => 
-    // add if else for the display
+     const displayContacts = () => 
     contacts.forEach(contact => {
         let outputHtml = `<div class="contact-info">
                     <h1 id="name">${contact.name}</h1>
@@ -69,22 +74,18 @@ displayContacts(contacts);
         
     DOMSelectors.container.innerHTML += outputHtml
        }); 
-
-       //displayContacts(contacts);
  
-       DOMSelectors.searchBar.addEventListener('keyup', searchInput)
+        DOMSelectors.searchBar.addEventListener('keyup', searchInput)
 
 //if (searchValue.length === 0) 
 
 
-loadContacts(displayContacts(contacts));
+loadContacts();
 
 
 // need a function to distinguish favorites
 
-DOMSelectors.favBtn.addEventListener('click', () => {
+/* DOMSelectors.favBtn.addEventListener('click', () => {
     console.log('linked');
-});
-
-// POSSIBLE* Toggle favorite function
+}); */
 
