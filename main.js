@@ -11,15 +11,18 @@ let contacts = [];
  const searchInput = function(e){
 
     const searchValue = e.target.value.toLowerCase();
+console.log(searchValue)
     const filteredResults = contacts.filter((contact) => {
         const regex = new RegExp(`^${searchValue}`, 'gi');
         return contact.name.match(regex); 
     });
 
 if(searchValue === 0){
-DOMSelectors.container.innerHTML = ''
+DOMSelectors.container.innerHTML = "";
+displayContacts = ""
 }
-else{
+    else{
+
     filteredResults.forEach(contact => {
         let Html = `<div class="contact-info">
                     <h1 id="name">${contact.name}</h1>
@@ -33,10 +36,7 @@ else{
     DOMSelectors.container.innerHTML += Html
        }); 
     };
-
-console.log(filteredResults);
-};  
- 
+ };
 
 // need to access JSON data
 
@@ -57,11 +57,13 @@ filteredResults = [];
 DOMSelectors.container.innerHTML = ; 
 }  */
 
-displayContacts(); 
+displayContacts();
+//searchInput(); 
 
 };
 
      const displayContacts = () => 
+     
     contacts.forEach(contact => {
         let outputHtml = `<div class="contact-info">
                     <h1 id="name">${contact.name}</h1>
@@ -75,17 +77,10 @@ displayContacts();
     DOMSelectors.container.innerHTML += outputHtml
        }); 
  
-        DOMSelectors.searchBar.addEventListener('keyup', searchInput)
+        DOMSelectors.searchBar.addEventListener('keyup', searchInput);
 
 //if (searchValue.length === 0) 
 
-
 loadContacts();
 
-
-// need a function to distinguish favorites
-
-/* DOMSelectors.favBtn.addEventListener('click', () => {
-    console.log('linked');
-}); */
 
