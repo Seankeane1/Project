@@ -108,5 +108,75 @@
         "phoneNum": "7833954081",
         "email": "filler16433@gmail.com",
         "favorite": false
+    },
+    {
+        "name": "Dean",
+        "lastName": "G",
+        "phoneNum": "7830107481",
+        "email": "filler09@gmail.com",
+        "favorite": true
+    },
+    {
+        "name": "Ryan",
+        "lastName": "F",
+        "phoneNum": "5140127091",
+        "email": "filler512@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "Nick",
+        "lastName": "P",
+        "phoneNum": "5146289481",
+        "email": "filler06@aol.com",
+        "favorite": true
+    },
+    {
+        "name": "Collin",
+        "lastName": "M",
+        "phoneNum": "5146751123",
+        "email": "filler666@aol.com",
+        "favorite": true
+    },
+    {
+        "name": "Vincent",
+        "lastName": "A",
+        "phoneNum": "7136730481",
+        "email": "filler2309302948@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "Robert",
+        "lastName": "S",
+        "phoneNum": "7137024608",
+        "email": "filler230268@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "Joe",
+        "lastName": "L",
+        "phoneNum": "7139052081",
+        "email": "filler2309302948@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "Val",
+        "lastName": "D",
+        "phoneNum": "5142570181",
+        "email": "filler2309302948@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "Raymond",
+        "lastName": "L",
+        "phoneNum": "7139137439",
+        "email": "filler270837@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "Sadie",
+        "lastName": "A",
+        "phoneNum": "7134078481",
+        "email": "filler814@gmail.com",
+        "favorite": false
     }
 ]
