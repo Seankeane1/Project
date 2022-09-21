@@ -4,25 +4,24 @@ const DOMSelectors = {
     container: document.querySelector(".container")
 };
 
-let contacts = [];
+//let contacts = [];
 
 // need a function to display certain results based on search data
 
- const searchInput = function(e){
+ const searchInput = (e) => {
 
-    const searchValue = e.target.value.toLowerCase();
-//console.log(searchValue)
-    const filteredResults = contacts.filter((contact) => {
-        const regex = new RegExp(`^${searchValue}`, 'gi');
-        return contact.name.match(regex); 
-    });
+     const searchValue = e.target.value.toLowerCase();
+     const filteredResults = contacts.filter((contact) => {
+         const regex = new RegExp(`^${searchValue}`, 'gi');
+         return contact.name.match(regex); //|| contact.email.match(regex); 
+     });
 
-if(searchValue === 0){
-DOMSelectors.container.innerHTML = "";
-}
-    else{
-displayContacts(filteredResults);
-    };
+     if (searchValue === 0) {
+         DOMSelectors.container.innerHTML = "";
+     }
+     else {
+         displayContacts(filteredResults);
+     };
  };
 
 // need to access JSON data
@@ -30,6 +29,7 @@ displayContacts(filteredResults);
 const loadContacts = async () => {
     const response = await fetch('../data/contacts.json');
     contacts = await response.json();
+
 // alphabetize names
 
  const alphabetize = (prop) =>
@@ -42,20 +42,6 @@ displayContacts(contacts);
 
 };
 
-     /* const displayContacts = (e) => 
-     
-    e.forEach(contact => {
-        let outputHtml = `<div class="contact-info">
-                    <h1 id="name">${contact.name}</h1>
-                    <h2 id="last-name">${contact.lastName}</h2>
-                    <div class="favorite"></div>
-                    <div class="info">
-                        <h3 class="phone-num">${contact.phoneNum}</h3>
-                        <h3 class="email">${contact.email}</h3>
-                    </div>`;
-        
-    DOMSelectors.container.innerHTML += outputHtml
-       });  */
        const displayContacts = (e) => {
         const htmlString = e
             .map((contact) => {
@@ -75,10 +61,8 @@ displayContacts(contacts);
     };
 
 
-        DOMSelectors.searchBar.addEventListener('keyup', searchInput);
-
-//if (searchValue.length === 0) 
-
+// Calling everything
+    DOMSelectors.searchBar.addEventListener('keyup', searchInput);
 loadContacts();
 
 

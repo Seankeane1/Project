@@ -94,5 +94,19 @@
         "lastName": "D",
         "phoneNum": "5142155201",
         "favorite": true
+    },
+    {
+        "name": "Carl",
+        "lastName": "P",
+        "phoneNum": "5143309081",
+        "email": "filler18643@gmail.com",
+        "favorite": false
+    },
+    {
+        "name": "Ethan",
+        "lastName": "O",
+        "phoneNum": "7833954081",
+        "email": "filler16433@gmail.com",
+        "favorite": false
     }
 ]
