@@ -16,13 +16,27 @@ const DOMSelectors = {
          return contact.name.match(regex); //|| contact.email.match(regex); 
      });
 
-     if (searchValue === 0) {
-         DOMSelectors.container.innerHTML = "";
+      if (searchValue === 0) {
+         displayContacts(contacts);
      }
      else {
          displayContacts(filteredResults);
-     };
+     }; 
  };
+
+ const checkFav = (value) => {
+    value.filter((contact) =>{
+         if(contact.favorite === true){
+           console.log(contact);
+        } 
+    })
+    console.log(Array.isArray(value));
+}
+
+    /* const displayFav = function(contacts){
+    
+            } */
+
 
 // need to access JSON data
 
@@ -38,6 +52,8 @@ const loadContacts = async () => {
 contacts.sort(alphabetize(`name`));
 
 displayContacts(contacts);
+checkFav(contacts);
+//DOMSelectors.favBtn.addEventListener("click", displayFav(contacts));
 //searchInput(); 
 
 };
@@ -59,6 +75,11 @@ displayContacts(contacts);
             .join('');
         DOMSelectors.container.innerHTML = htmlString;
     };
+
+
+    // DOMSelectors.favBtn.addEventListener("click", displayFav);
+
+
 
 
 // Calling everything

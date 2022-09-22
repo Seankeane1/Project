@@ -87,7 +87,7 @@
         "name": "Ronald",
         "lastName": "R",
         "email": "filler758@gmail.com",
-        "favorite": false
+        "favorite": true
     },
     {
         "name": "Mike",
@@ -156,7 +156,7 @@
         "lastName": "L",
         "phoneNum": "7139052081",
         "email": "filler2309302948@gmail.com",
-        "favorite": false
+        "favorite": true
     },
     {
         "name": "Val",
