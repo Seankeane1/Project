@@ -31,6 +31,9 @@ const DOMSelectors = {
         } 
     })
     console.log(Array.isArray(filteredFavs));
+    filteredFavs.forEach(() => {
+       console.log("works");
+    }); 
 }
 
 const displayFav = function(){
@@ -52,8 +55,6 @@ contacts.sort(alphabetize(`name`));
 
 displayContacts(contacts);
 checkFav(contacts);
-//DOMSelectors.favBtn.addEventListener("click", displayFav(contacts));
-//searchInput(); 
 
 };
 
@@ -76,7 +77,7 @@ checkFav(contacts);
     };
 
 
-    // DOMSelectors.favBtn.addEventListener("click", displayFav);
+      DOMSelectors.favBtn.addEventListener("click", checkFav);
 
 
 
