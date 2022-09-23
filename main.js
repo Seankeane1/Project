@@ -17,7 +17,7 @@ const DOMSelectors = {
      });
 
       if (searchValue === 0) {
-         displayContacts(contacts);
+         //displayContacts(contacts);
      }
      else {
          displayContacts(filteredResults);
