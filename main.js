@@ -25,18 +25,17 @@ const DOMSelectors = {
  };
 
  const checkFav = (value) => {
-    value.filter((contact) =>{
+    let filteredFavs = value.filter((contact) =>{
          if(contact.favorite === true){
            console.log(contact);
         } 
     })
-    console.log(Array.isArray(value));
+    console.log(Array.isArray(filteredFavs));
 }
 
-    /* const displayFav = function(contacts){
+const displayFav = function(){
     
-            } */
-
+} 
 
 // need to access JSON data
 
